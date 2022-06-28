@@ -143,7 +143,5 @@ basket.remove(second, 1);
 basket.remove(third, 2);
 
 basket.removeUnavailable();
-// console.log(`Unavaliable items removed from the cart:`, basket)
 
 basket.clear();
-// console.log(`Shopping cart is empty:`, basket)
