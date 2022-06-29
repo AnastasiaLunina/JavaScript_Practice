@@ -32,7 +32,7 @@ class GoodsList {
     get list() {
         const resultList = this.#goods.filter(value => this.filter.test(value.name))
 
-        if (this.sortPrice) {
+        if (!this.sortPrice) {
             return resultList;
         }
 
@@ -121,7 +121,7 @@ catalog.add(fifth);
 
 catalog.filter = /s/i;
 
-catalog.sortPrice = false;
+catalog.sortPrice = true;
 catalog.sortDir = false;
 console.log(`Sorting by price in descending order:`, catalog.list);
 
