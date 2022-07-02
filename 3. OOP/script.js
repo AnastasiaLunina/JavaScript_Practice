@@ -21,7 +21,7 @@ class BasketGood extends Goods {
 }
 
 class GoodsList {
-    #goods;
+    #goods
     constructor(filter, sortPrice, sortDir) {
         this.#goods = [];
         this.filter = filter;
@@ -30,7 +30,7 @@ class GoodsList {
     }
 
     get list() {
-        const resultList = this.#goods.filter(value => this.filter.test(value.name))
+        const resultList = this.#goods.filter(value => this.filter.test(value.name));
 
         if (!this.sortPrice) {
             return resultList;
@@ -69,7 +69,7 @@ class Basket {
     }
 
     add(good, amount) {
-        let index = this.goods.findIndex(value => value.id === good.id)
+        let index = this.goods.findIndex(value => value.id === good.id);
         if (index >= 0) {
             this.goods[index].amount += amount;
         } else {
@@ -79,7 +79,7 @@ class Basket {
     }
 
     remove(good, amount) {
-        let index = this.goods.findIndex(value => value.id === good.id)
+        let index = this.goods.findIndex(value => value.id === good.id);
         if (index >= 0) {
             if (this.goods[index].amount - amount <= 0 || amount === 0) {
                 this.goods.splice(index, 1);
@@ -94,7 +94,7 @@ class Basket {
     }
 
     removeUnavailable() {
-        this.goods.filter(item => item.available === false).forEach(value => this.remove(value))
+        this.goods.filter(item => item.available === false).forEach(value => this.remove(value));
     }
 }
 
