@@ -4,7 +4,7 @@ const { stdin: input, stdout: output } = require('process');
 const rl = readline.createInterface({ input, output });
 
 // Setting attempts counting to 0
-let counter = 0;
+counter = 0;
 
 // Generating a random number
 let min=1;
@@ -34,7 +34,7 @@ function play(response) {
     rl.question('Enter a number between 1 and 10: ', (input) => {
         let userNumber = +input;
 
-        if(isNaN(userNumber) || userNumber < min || userNumber > max) {
+        if(isNaN(userNumber) || userNumber < 1 || userNumber > 10) {
             response(`Wrong input. `);
             play(response);
         }
