@@ -1,17 +1,19 @@
 const menuItem = Array.from(document.getElementsByClassName('menu__item'));
 const menuLink = Array.from(document.getElementsByClassName('menu__link'));
 
-
-function navMenu() { 
-    for (let i = 0; i < menuLink.length; i++) {
-        menuLink[i].onclick = (event) => {
-            const closestItem = menuLink[i].closest(".menu__item");
-            const dropDown = closestItem.querySelector(".menu_sub");
-            
-            dropDown.classList.toggle("menu_active");
-            event.preventDefault();
-            };
+for (let i = 0; i < menuLink.length; i++) {
+    menuLink[i].onclick = () => {
+        if (menuItem[i].querySelector('.menu_sub') && !menuItem[i].querySelector('.menu_active')) {
+            menuItem.forEach((element, index) => {
+                if (element.querySelector('.menu_active')) {
+                        menuItem[index].querySelector('.menu_sub').classList.remove('menu_active');
+                    }
+                });
+            menuItem[i].querySelector('.menu_sub').classList.add('menu_active');
+            return menuItem[i].getAttribute('href') == false;
+        } else if (menuItem[i].querySelector('.menu_sub') && menuItem[i].querySelector('.menu_active')) {
+            menuItem[i].querySelector('.menu_sub').classList.remove('menu_active');
+            return menuItem[i].getAttribute('href') == false;
         }
-   }
-
-   navMenu();
+    };
+}
