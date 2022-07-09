@@ -7,7 +7,8 @@ function showPopup() {
     popupLoad.classList.add("modal_active");
   }
 
-function closePopup() {for (let i = 0; i < closeModal.length; i++) {
+function closePopup() {
+    for (let i = 0; i < closeModal.length; i++) {
     let eachClose = closeModal[i];
 
     let closeFunc = () => {
