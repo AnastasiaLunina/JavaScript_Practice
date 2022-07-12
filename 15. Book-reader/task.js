@@ -8,7 +8,7 @@ fontSizeButtons.forEach((btn) => {
 });
 
 textButtons.forEach((btn) => {
-    btn.addEventListener('click', switchText);
+    btn.addEventListener('click', switchTextColor);
 });
 
 backgroundButtons.forEach((btn) => {
@@ -36,7 +36,7 @@ function switchSize(event) {
         }
 }
 
-function switchText(event) {
+function switchTextColor(event) {
     event.preventDefault();
     textButtons.forEach((btn) => {
         if (btn.classList.contains("color_active")) {
