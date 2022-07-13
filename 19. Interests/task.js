@@ -1,48 +1,36 @@
-const checkbox = Array.from(document.getElementsByClassName('interest__check'));
+//	select all checkboxes 
+const allThings = Array.from(document.querySelectorAll('.interest__check'));
 
-function onCheckedParents(e) {
-    let check = e.target;
+//	add global event listener
+window.addEventListener('change', e => {
+	let check = e.target;
 
-    if (!checkbox.indexOf(check)) {
-        return;
-    } else {
-        while (check) {
-            const parent = check.closest('ul').parentElement.querySelector('input');
-            const sibling = Array.from((parent.closest('li').querySelector('ul')).querySelectorAll('input'));
-            const checkStatus = sibling.map(elem => elem.checked === true);
-            const every = checkStatus.every(elem => elem === true);
-            const some = checkStatus.some(elem => elem === true);
-            parent.checked = every;
+	//	exit in case of no change event from array of allThings 
+	if(allThings.indexOf(check) === -1) {
+    return;
+  }
 
-            if (!every && every !== some) {
-                parent.indeterminate = true;
-            } else {
-                parent.indeterminate = false;
-            }
+	//	check/unchek children
+	const children = e.target.closest('.interest').querySelectorAll('input');
+	children.forEach(child => child.checked = check.checked);
+	
+	//	go up from target check
+	while(check) {
+		
+		//	get parent and sibling checkboxes
+    const parent = check.closest('ul').parentElement.querySelector('input');
+    const siblings = Array.from((parent.closest('li').querySelector('ul')).querySelectorAll('input'));
 
-            if (check != parent) {
-                check = parent;
-            } else {
-                check = 0;
-            }
-        }
-    }
-}
+		//	get checked state of siblings 
+		const checkStatus = siblings.map(check => check.checked);
+		const every  = checkStatus.every(Boolean);
+		const some = checkStatus.some(Boolean);		
+		
+		//	check parent if all siblings are checked, set indeterminate
+		parent.checked = every;		
+		parent.indeterminate = !every && every !== some;
 
-function onCheckedChildren(e) {
-    const children = e.target.closest('.interest').querySelectorAll('input');
-    if (this.checked === true) {
-        for (let index of children) {
-            index.checked = true;
-        }
-    } else {
-        for (let index of children) {
-            index.checked = false;
-        }
-    }
-}
-
-for (let index of checkbox) {
-    index.addEventListener('change', onCheckedChildren);
-    index.addEventListener('change', onCheckedParents);
-}
+		//	next loop
+		check = check != parent ? parent : 0;
+	}
+});
