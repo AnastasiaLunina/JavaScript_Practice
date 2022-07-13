@@ -68,10 +68,10 @@ function getTime() {
 function userSendMessage() {
     startTimer();
     messages.innerHTML += `
-  <div class="message message_client">
-    <div class="message__time">${getTime()}</div>
-    <div class="message__text">${inputField.value}</div>
-  </div>
+    <div class="message message_client">
+        <div class="message__time">${getTime()}</div>
+        <div class="message__text">${inputField.value}</div>
+    </div>
 `;
     inputField.value = '';
     messages.scrollIntoView(false);
@@ -81,10 +81,10 @@ function userSendMessage() {
 
 function botReplyMessage() {
     messages.innerHTML += `
-  <div class="message">
-    <div class="message__time">${getTime()}</div>
-    <div class="message__text">${getRandomReply()}</div>
-  </div>
+    <div class="message">
+        <div class="message__time">${getTime()}</div>
+        <div class="message__text">${getRandomReply()}</div>
+    </div>
 `;
     messages.scrollIntoView(false);
 }
