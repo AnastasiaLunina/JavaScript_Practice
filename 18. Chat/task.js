@@ -76,7 +76,6 @@ function userSendMessage() {
     inputField.value = '';
     messages.scrollIntoView(false);
     stopTimer();
-
 }
 
 function botReplyMessage() {
