@@ -52,11 +52,11 @@
 ## Блок 3. Работа с состоянием
 
 #### 3.1. Асинхронные запросы
-[Poll]()<br>
-[Preloader]()<br>
-[Progressbar]()
+[Poll](https://github.com/AnastasiaLunina/JavaScript_Practice/tree/main/23.%20Poll)<br>
+[Preloader](https://github.com/AnastasiaLunina/JavaScript_Practice/tree/main/24.%20Preloader)<br>
+[Progressbar](https://github.com/AnastasiaLunina/JavaScript_Practice/tree/main/25.%20Progressbar)
 
 #### 3.2. Хранение состояния на клиенте
-[Authorization]()<br>
-[Popup]()<br>
-[Text-editor]()
+[Authorization](https://github.com/AnastasiaLunina/JavaScript_Practice/tree/main/26.%20Auth)<br>
+[Popup](https://github.com/AnastasiaLunina/JavaScript_Practice/tree/main/27.%20Popup)<br>
+[Text-editor](https://github.com/AnastasiaLunina/JavaScript_Practice/tree/main/28.%20Text-editor)
