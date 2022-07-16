@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
   const xhr = new XMLHttpRequest();
 
   xhr.upload.addEventListener("progress", (e) => {
-    if(xhr.readyState !== xhr.DONE) {
+    if(xhr.readyState !== xhr.DONE && xhr.status === 200) {
         progress.value = (e.loaded / e.total);
     }
   });

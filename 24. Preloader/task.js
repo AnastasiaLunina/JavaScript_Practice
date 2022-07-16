@@ -8,10 +8,10 @@ xhr.send();
 
 // console.log(xhr);
 
-xhr.addEventListener('readystatechange', getCurrencyRate);
+xhr.addEventListener('load', getCurrencyRate);
 
 function getCurrencyRate() {
-    if (xhr.readyState === xhr.DONE) {
+    if (xhr.readyState === xhr.DONE && xhr.status === 200) {
       const currency = xhr.response.response.Valute;
       
       for(let i in currency) {

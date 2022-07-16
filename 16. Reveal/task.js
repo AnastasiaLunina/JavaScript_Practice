@@ -5,10 +5,10 @@ window.addEventListener('scroll', getReveals);
 function isVisible(reveal) {
     const {top, bottom} = reveal.getBoundingClientRect();
 
-    if (+bottom-100 < 0) {
+    if (bottom < 0) {
         return false;
     }
-    if (top > +window.innerHeight-100) {
+    if (top > window.innerHeight) {
         return false;
     }
     return true;

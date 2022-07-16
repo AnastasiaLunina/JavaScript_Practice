@@ -1,5 +1,5 @@
-let pollTitle = document.getElementById('poll__title');
-let pollAnswers = document.getElementById('poll__answers');
+const pollTitle = document.getElementById('poll__title');
+const pollAnswers = document.getElementById('poll__answers');
 
 const xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://netology-slow-rest.herokuapp.com/poll.php', true);
@@ -8,10 +8,10 @@ xhr.send();
 
 // console.log(xhr);
 
-xhr.addEventListener('readystatechange', getPoll);
+xhr.addEventListener('load', getPoll);
 
 function getPoll() {
-    if(xhr.readyState === xhr.DONE) {
+    if(xhr.readyState === xhr.DONE && xhr.status === 200) {
         pollTitle.innerText = xhr.response.data.title;
 
         let answers = xhr.response.data.answers;
