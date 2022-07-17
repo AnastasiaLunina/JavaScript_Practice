@@ -5,7 +5,7 @@
   display: block;
 }
 .control {
-    width: 100%;
+    width: 30%;
     display: block;
     padding: 10px 20px;
     margin: 0 0 20px 0;
@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-.btn {
+.btn, #signout__btn {
   font-family: Golos, Arial, sans-serif;
   color: #fff;
   background-color: #06f;
@@ -38,6 +38,16 @@
 }
 
 .welcome {
+  display: none;
+}
+
+.signout {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#signout__btn {
   display: none;
 }
 
