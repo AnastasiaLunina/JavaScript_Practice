@@ -35,9 +35,7 @@ function signInUser(event) {
   xhr.addEventListener('load', sendForm);
 
   function sendForm() {
-    if (xhr.readyState === xhr.DONE && xhr.status == 200) {
         // console.log(xhr.response);
-
       if (xhr.response.success) {
         localStorage.setItem('id', xhr.response.user_id);
 
@@ -45,7 +43,6 @@ function signInUser(event) {
 
       } else {
         alert('Wrong username or password');
-      }
       form.reset();
     }
   }

@@ -12,7 +12,7 @@ function getUserInput() {
 
 function reset() {
     localStorage.removeItem('text');
-    location.reload();
+    textEditor.value = "";
 }
 
 

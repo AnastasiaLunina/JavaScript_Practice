@@ -9,3 +9,7 @@ textarea, #reset {
   box-sizing: border-box;
   resize: none;
 }
+
+#reset {
+  cursor: pointer;
+}
